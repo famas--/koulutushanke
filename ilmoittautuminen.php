@@ -1,15 +1,16 @@
 <?php
 include 'haetaankoulutukset.php';
+
 ?>
 
 <html>
 <body>
 
-<form action="tavarakoulutustaulukkoon.php" method="post"/>
+<form action="tavarailmoittautuneettaulukkoon.php" method="post"/>
 <table>
 <tr>
 <td>Koulutuksen nimi:</td><td>
-	<select name="koulutus">
+	<select name="koulutuksennimi">
 		<?php query() ?>
 	</select>
 		
