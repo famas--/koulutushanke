@@ -1,14 +1,12 @@
-
-
 <!DOCTYPE html>
 <html>
 <body>
 
-<form>
+<form action="tavarakoulutustaulukkoon.php" method="post"/>
 <table>
 <tr>
-<td>Koulutuksen nimi:</td> <td><input type="text" name="firstname" size="40"></td><tr>
-<td>Paikka: </td> <td><input type="text" name="firstname" size="40"></td><tr>
+<td>Koulutuksen nimi:</td> <td><input type="text" name="koulutuksennimi" size="40"></td><tr>
+<td>Paikka: </td> <td><input type="text" name="paikka" size="40"></td><tr>
 <td>Aloitusaika: </td> <td><input type="datetime-local" name="aloitusaika" ></td><tr>
 <td>Lopetusaika: </td> <td><input type="datetime-local" name="lopetusaika"></td><tr>
 <td>Ilmoittautuminen p&auml;&auml;ttyy:</td> <td><input type="datetime-local" name="ilmoittautuminen paattyy"></td><tr>
