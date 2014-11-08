@@ -1,16 +1,19 @@
 <?php
+include 'haetaankoulutukset.php';
+?>
 
-//sisällytetään yhteystidot
-include 'yhteys.php';
-
-<!DOCTYPE html>
 <html>
 <body>
 
 <form action="tavarakoulutustaulukkoon.php" method="post"/>
 <table>
 <tr>
-<td>Koulutuksen nimi:</td> <td><input type="text" name="koulutuksennimi" size="40"></td><tr>
+<td>Koulutuksen nimi:</td><td>
+	<select name="koulutus">
+		<?php query() ?>
+	</select>
+		
+</td><tr>
 <td>Paikka: </td> <td><input type="text" name="paikka" size="40"></td><tr>
 <td>Aloitusaika: </td> <td><input type="datetime-local" name="aloitusaika" ></td><tr>
 <td>Lopetusaika: </td> <td><input type="datetime-local" name="lopetusaika"></td><tr>
@@ -28,26 +31,4 @@ include 'yhteys.php';
 
 </body>
 </html>
-
-// tallennetaan postattu tieto variableen
-$nimi = $_POST['koulutuksennimi'];
-
-
-
-// viedään $nimi variableen tallennettu tieto koulutustaulukkoon tietueeseen koulutuksen nimi
-$sql = "INSERT INTO koulutus (koulutuksennimi) VALUES ('$nimi')";
-
-
-
-// ilmoitus jos vienti epäonnistui
-if (!mysql_query($sql)) {
-    die("error" . mysql_error());
-} 
-echo "Tiedot vietiin tietokantaan";
-
-// suljetaan yhteys
-mysql_close();
-?>
-
-
 

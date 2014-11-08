@@ -5,7 +5,6 @@ include 'yhteys.php';
 
 
 
-
 // tallennetaan postattu tieto variableen
 $nimi = $_POST['koulutuksennimi'];
 
