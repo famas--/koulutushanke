@@ -11,7 +11,7 @@ $nimi = $_POST['koulutuksennimi'];
 
 
 // viedään $nimi variableen tallennettu tieto koulutustaulukkoon tietueeseen koulutuksen nimi
-$sql = "INSERT INTO ilmoittautuneet (koulutuksennimi) VALUES ('$nimi')";
+$sql = "INSERT INTO koulutuspalaute (koulutuksennimi) VALUES ('$nimi')";
 
 
 
