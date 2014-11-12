@@ -3,12 +3,21 @@
 //sisällytetään yhteystidot
 include 'yhteys.php';
 
-function query(){
-	$koulutus = mysql_query ("SELECT koulutuksennimi FROM koulutus");
-	while($tieto = mysql_fetch_array ($koulutus)){
-		echo '<option value="' . $tieto['koulutuksennimi'] . '">' . $tieto['koulutuksennimi'] . '</option>';
-	}
+
+
+$sql = "SELECT koulutusid, koulutuksennimi FROM koulutus";
+$tulos = mysql_query($tietokanta . $sql);
+
+if ($tulos->num_rows > 0) {
+     echo "<table><tr><th>ID</th><th>Koulutus</th></tr>";
+     // output data of each row
+     while($row = $tulos->fetch_assoc()) {
+         echo "<tr><td>" . $row["koulutusid"]. "</td><td>" . $row["koulutuksennimi"]. "</td></tr>";
+     }
+     echo "</table>";
+} else {
+     echo "tuloksia 0";
 }
 
-
-?>
+$tietokanta->close();
+?>  
