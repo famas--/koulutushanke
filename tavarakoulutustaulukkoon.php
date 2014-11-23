@@ -18,6 +18,8 @@ $puh = $_POST['puh'];
 $kuvaus = $_POST['kuvaus'];
 $kesto = $_POST['kesto'];
 $hinta = $_POST['hinta'];
+$palaute = $_POST['palaute'];
+
 
 
 
@@ -34,8 +36,9 @@ $sql = "INSERT INTO koulutus (
 		puh,
 		kuvaus,
 		kesto,
-		hinta
-		) VALUES ('$nimi','$paikka','$aloitusaika','$lopetusaika','$ilmoittautuminen','$ryhmankoko','$toteuttaja','$email','$puh','$kuvaus','$kesto','$hinta')";
+		hinta,
+		palaute
+		) VALUES ('$nimi','$paikka','$aloitusaika','$lopetusaika','$ilmoittautuminen','$ryhmankoko','$toteuttaja','$email','$puh','$kuvaus','$kesto','$hinta','$palaute')";
 		
 
 

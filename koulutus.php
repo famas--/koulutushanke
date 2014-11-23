@@ -17,7 +17,10 @@
 <td>Koulutuksen kesto: </td> <td><input type="text" name="kesto" size="40"></td><tr>
 <td>Koulutuksen hinta: </td> <td><input type="text" name="hinta" size="40"></td><tr>
 <td>Koulutuksen kuvaus: </td> <td><textarea type="text" rows="10" cols="50" name="kuvaus"></textarea></td><tr>
-</table>
+<td><p>Koulutuksesta voi antaa palautteen:</p></td><tr>
+<td>Kylla</td> <td><input type="radio" name="palaute" value="kylla"></td><tr>
+<td>Ei</td> <td><input type="radio" name="palaute" value="ei"></td><tr>
+</table><br>
 <input type="submit" value="Tallenna tietokantaan">
 </form>
 

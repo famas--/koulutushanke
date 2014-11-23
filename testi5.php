@@ -13,7 +13,7 @@ $sql1 = mysql_query("SELECT koulutusid, ilmoittautuminen FROM koulutus");
 while($tulos1 = mysql_fetch_array($sql1))
 
 
-$sql = mysql_query("SELECT koulutuksennimi, aloitusaika, lopetusaika FROM koulutus WHERE ilmoittautuminen >= CURTIME()");
+$sql = mysql_query("SELECT koulutuksennimi, aloitusaika, lopetusaika FROM koulutus WHERE ilmoittautuminen <= CURTIME()");
 while($tulos = mysql_fetch_array($sql))
 {
 	
@@ -22,7 +22,7 @@ while($tulos = mysql_fetch_array($sql))
 	
 	<tr><td>" . $tulos['koulutuksennimi'] . "</td>
 	
-	<form id=\"form1\" action=\"tiedot.php\" method=\"POST\">
+	<form id=\"form1\" action=\"testi3.php\" method=\"POST\">
 	<input type=\"hidden\" name=\"var\" value=" . $tulos['koulutuksennimi']. ">
 	<td style=\"width:100px\" align=\"right\"><input type=\"submit\" value=\"Tiedot\"></td>
 		

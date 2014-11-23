@@ -1,42 +1,38 @@
+
+
 <?php
 
-//yhteyksien määrittely
-$servername = "localhost";
-$username = "root";
-$password = "";
+//sisällytetään yhteystidot
+include 'yhteys.php';
 
 
 
-// luo yhteys
-$yhteys = mysql_connect($servername, $username, $password);
 
 
-
-// tarkista yhteys
-if (!$yhteys) {
-    die("yhteys ei onnistunut: " . mysql_error());
-} 
-
-//tallennetaan tietokanta variableen
-$db = "koulutushanke";
-
-// valitse tietokanta
-$tietokanta = mysql_select_db ($db, $yhteys);
+$sql1 = mysql_query("SELECT koulutusid, ilmoittautuminen FROM koulutus");
+while($tulos1 = mysql_fetch_array($sql1))
 
 
-
-// tarkista yhteys tietokantaan
-if (!$tietokanta) {
-    die("yhteys tietokantaan ei onnistunut: " . mysql_error());
-} 
-
-
-
-$sql = mysql_query("SELECT koulutusid, koulutuksennimi FROM koulutus");
+$sql = mysql_query("SELECT koulutuksennimi FROM koulutus");
 while($tulos = mysql_fetch_array($sql))
 {
-	echo 'ID ' . $tulos['koulutusid'] . 'Koulutus ' . $tulos['koulutuksennimi'];
+	
+	echo "<table>";
+	echo "<tr><td><button onclick=\"testi()\">Tiedot</button></td><td>" . $tulos['koulutuksennimi'] . "</td></tr>";
+	echo "</table>";
 }
 
 
+function testi(){}
+
 ?>  
+
+
+
+
+<script type="text/javascript">
+/*var sql1="<?php echo $sql1; ?>"
+function testi() {
+    alert(sql1);
+}*/
+</script>
